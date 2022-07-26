@@ -1,16 +1,15 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/core/ID"
 ], function (Controller, MessageToast) {
     "use strict";
     return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
         onShowHello: function () {
             MessageToast.show("Hello World",{
-                duration: 50
+                duration: 50,
             });
             //alert("Hello World!");
-            sap.ui.getCore().byId("button2").setText("New");
+            //sap.ui.getCore().byId("button2").setText("New");
 
         },
         onShowsecondButton: function () {
