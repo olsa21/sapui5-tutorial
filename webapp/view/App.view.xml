@@ -16,7 +16,7 @@
       
       <Input
       value="{/recipient/name}"
-      description="Hello {/recipient/name}"
+      description="Hello {/recipient/name}, len: {/recipient/length}"
       valueLiveUpdate="true"
       width="60%"/>
 </mvc:View>
