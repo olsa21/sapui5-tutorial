@@ -8,7 +8,7 @@
       press=".onShowHello"/>
 
       <Button
-      text="Second Button"
+      text="{i18n>showHelloButtonText}"
       icon="sap-icon://home"
       enabled="false"
       id="button2"
