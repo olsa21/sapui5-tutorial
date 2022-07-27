@@ -19,8 +19,8 @@ sap.ui.define([
             // set i18n model on view
             var i18nModel = new ResourceModel({
                 bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
-                fallbackLocale: "en_US",
-                supportedLocales: ["en_US", "de"]
+                fallbackLocale: "en",
+                supportedLocales: ["en_US", "en", "de"]
             });
             this.getView().setModel(i18nModel, "i18n");
          },

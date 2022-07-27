@@ -3,12 +3,12 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button
-      text="Say Hello"
+      text="{i18n>showHelloButtonText}"
       icon="sap-icon://action-settings"
       press=".onShowHello"/>
 
       <Button
-      text="{i18n>showHelloButtonText}"
+      text="{i18n>buttonText}"
       icon="sap-icon://home"
       enabled="false"
       id="button2"
@@ -16,7 +16,7 @@
       
       <Input
       value="{/recipient/name}"
-      description="Hello {/recipient/name}, len: {/recipient/length}"
+      description="{i18n>hello} {/recipient/name}, len: {/recipient/length}"
       valueLiveUpdate="true"
       width="60%"/>
 </mvc:View>
