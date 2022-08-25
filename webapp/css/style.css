@@ -1,0 +1,15 @@
+/* sapMBtn um das spezifischer zu machen: Die spezifischte Regel wird angewendet */
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem
+ }
+
+ /* right to left: zB Arabisch */
+ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-left: 0.125rem
+ }
+ 
+ .myAppDemoWT .myCustomText {
+    /* inline-block: benutzerdefinierte Klasse ohne zusätzliche Selektoren definieren */
+    display: inline-block;
+    font-weight: bold;
+ }

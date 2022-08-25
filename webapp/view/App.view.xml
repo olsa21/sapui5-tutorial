@@ -1,6 +1,7 @@
-<View controllerName="sap.ui.demo.walkthrough.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+<mvc:View controllerName="sap.ui.demo.walkthrough.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
 	<Shell>
-		<App>
+		<!-- myAppDemoWT holt nur gültige CSS-Regeln -->
+		<App class="myAppDemoWT">
 			<pages>
 				<Page title="{i18n>homePageTitle}">
 					<content>
@@ -8,10 +9,12 @@
 							<content>
 								<Label text="Titel: {i18n>appTitle}" width="100%" textAlign="Center" />
 								<Label text="{i18n>appDescription}" width="100%" textAlign="Center" />
-								<Button text="{i18n>showHelloButtonText}" icon="sap-icon://action-settings" press=".onShowHello" class="sapUiSmallMarginEnd"/>
-								<Button text="{i18n>buttonText}" icon="sap-icon://home" enabled="false" id="button2" press=".onShowsecondButton" class="sapUiTinyMarginBeginEnd"/>
-								<Input value="{/recipient/name}" description="{i18n>hello} {/recipient/name}, len: {/recipient/length}" valueLiveUpdate="true" width="60%" />
+								<Button text="{i18n>showHelloButtonText}" icon="sap-icon://action-settings" press=".onShowHello" class="myCustomButton" />
+								<Button text="{i18n>buttonText}" icon="sap-icon://home" enabled="false" id="button2" press=".onShowsecondButton" class="sapUiTinyMarginBeginEnd" />
+								<Input value="{/recipient/name}" description="{i18n>hello} {/recipient/name}, len: {/recipient/length}" valueLiveUpdate="true" width="auto" />
 								<Text text="{i18n>hello} {/recipient/name}" class="sapUiSmallMargin" />
+								<!-- sapThemeHighlight-asColor: Themenabhängige Farbe -->
+								<FormattedText htmlText="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" />
 							</content>
 						</Panel>
 					</content>
@@ -19,4 +22,4 @@
 			</pages>
 		</App>
 	</Shell>
-</View>
+</mvc:View>
