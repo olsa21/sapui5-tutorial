@@ -4,13 +4,14 @@
 			<pages>
 				<Page title="{i18n>homePageTitle}">
 					<content>
-						<Panel headerText="{i18n>helloPanelTitle}">
+						<Panel headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto">
 							<content>
 								<Label text="Titel: {i18n>appTitle}" width="100%" textAlign="Center" />
 								<Label text="{i18n>appDescription}" width="100%" textAlign="Center" />
-								<Button text="{i18n>showHelloButtonText}" icon="sap-icon://action-settings" press=".onShowHello" />
-								<Button text="{i18n>buttonText}" icon="sap-icon://home" enabled="false" id="button2" press=".onShowsecondButton" />
+								<Button text="{i18n>showHelloButtonText}" icon="sap-icon://action-settings" press=".onShowHello" class="sapUiSmallMarginEnd"/>
+								<Button text="{i18n>buttonText}" icon="sap-icon://home" enabled="false" id="button2" press=".onShowsecondButton" class="sapUiTinyMarginBeginEnd"/>
 								<Input value="{/recipient/name}" description="{i18n>hello} {/recipient/name}, len: {/recipient/length}" valueLiveUpdate="true" width="60%" />
+								<Text text="{i18n>hello} {/recipient/name}" class="sapUiSmallMargin" />
 							</content>
 						</Panel>
 					</content>
