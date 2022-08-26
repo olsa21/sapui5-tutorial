@@ -1,0 +1,19 @@
+<!-- 
+    Fragmente haben keine Controller, sinnvoll wenn mehrfach genutzt werden soll.
+ -->
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialog"
+      title="Hello {/recipient/name}"
+      icon="sap-icon://collision"
+      stretch="true">
+        <Label text="Beispieltext"/>
+        <beginButton>
+            <Button
+             text="{i18n>dialogCloseButtonText}"
+             press=".onCloseDialog"/>
+        </beginButton>
+   </Dialog>
+</core:FragmentDefinition>

@@ -3,6 +3,7 @@
 		<content>
 			<Label text="Titel: {i18n>appTitle}" width="100%" textAlign="Center" />
 			<Label text="{i18n>appDescription}" width="100%" textAlign="Center" />
+			<Button id="helloDialogButton" text="{i18n>openDialogButtonText}" press=".onOpenDialog" class="sapUiSmallMarginEnd"/>
 			<Button text="{i18n>showHelloButtonText}" icon="sap-icon://action-settings" press=".onShowHello" class="myCustomButton" />
 			<Button text="{i18n>buttonText}" icon="sap-icon://home" enabled="false" id="button2" press=".onShowsecondButton" class="sapUiTinyMarginBeginEnd" />
 			<Input value="{/recipient/name}" description="{i18n>hello} {/recipient/name}, len: {/recipient/length}" valueLiveUpdate="true" width="auto" />
