@@ -12,11 +12,22 @@
       id="invoiceList"
       class="sapUiResponsiveMargin"
       width="auto"
-      items="{invoice>/Invoices}" >
+      items="{
+         path : 'invoice>/Invoices',
+         sorter : {
+            path : 'ShipperName' ,
+            group : true
+         }
+      }" >
       <headerToolbar>
          <Toolbar>
             <Title text="{i18n>invoiceListTitle}"/>
             <ToolbarSpacer/>
+            <Label text="{i18n>invoiceSortByText}" />
+            <Button text="{i18n>invoiceByName}" press=".onOrder('byName')"/>
+            <Button text="{i18n>invoiceByQuantity}" press=".onOrder('byQuantity')"/>
+            <Button text="{i18n>invoiceByShipperName}" />
+
             <SearchField width="50%" search=".onFilterInvoices"/>
          </Toolbar>
       </headerToolbar>

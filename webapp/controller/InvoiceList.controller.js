@@ -28,6 +28,20 @@ sap.ui.define([
 			var oList = this.byId("invoiceList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+		},
+		onOrder: function(sButtonText){
+			switch(sButtonText){
+				case 'byName': var sSortKey = "ProductName";
+				case 'byQuantity': var sSortKey = "Quantity";
+			}
+
+			var oList=this.byId("invoiceList"), 
+            oBinding = oList.getBinding("items");
+            
+            this.bDescending= !this.bDescending; //switches the boolean back and forth from ascending to descending
+            var bGroup = false;
+
+            oBinding.sort(new sap.ui.model.Sorter(sSortKey, this.bDescending, bGroup));
 		}
 	});
 });
