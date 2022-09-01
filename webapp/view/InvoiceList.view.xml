@@ -16,9 +16,14 @@
       <items>
          <ObjectListItem
             title="{invoice>Quantity} x {invoice>ProductName}"
-            press=".onOpenDialog"
-            markLocked="true"
-            icon="sap-icon://world"/>
+            number="{
+               parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+               type: 'sap.ui.model.type.Currency',
+               formatOptions: {
+                  showMeasure: false
+               }
+            }"
+		      numberUnit="{view>/currency}"/>
       </items>
    </List>
 </mvc:View>
