@@ -1,0 +1,24 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList">
+   <!--<List
+        items="{invoice>/Invoices}" >
+        <items>
+            <StandardListItem title="TETS"/>
+        </items>
+    </List> -->
+   <List
+      headerText="{i18n>invoiceListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{invoice>/Invoices}" >
+      <items>
+         <ObjectListItem
+            title="{invoice>Quantity} x {invoice>ProductName}"
+            press=".onOpenDialog"
+            markLocked="true"
+            icon="sap-icon://world"/>
+      </items>
+   </List>
+</mvc:View>
