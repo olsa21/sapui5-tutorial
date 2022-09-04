@@ -2,12 +2,6 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
    controllerName="sap.ui.demo.walkthrough.controller.InvoiceList">
-   <!--<List
-        items="{invoice>/Invoices}" >
-        <items>
-            <StandardListItem title="TETS"/>
-        </items>
-    </List> -->
    <List
       id="invoiceList"
       class="sapUiResponsiveMargin"

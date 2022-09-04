@@ -1,0 +1,26 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList">
+   <!-- Zweite Liste mit Remote Daten -->
+   <List 
+      id="invoiceListRemote"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+         path : 'invoiceRemote>/Invoices',
+         sorter : {
+            path : 'ShipperName' ,
+            group : true
+         }
+      }">
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle} Remote"/>
+         </Toolbar>
+      </headerToolbar>
+      <items>
+         <ObjectListItem title="{invoiceRemote>Quantity} x {invoiceRemote>ProductName}"/>
+      </items>
+   </List>
+</mvc:View>
