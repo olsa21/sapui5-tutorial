@@ -15,7 +15,7 @@
       }" >
       <headerToolbar>
          <Toolbar>
-            <Title text="{i18n>invoiceListTitle}"/>
+            <Title text="{i18n>invoiceListTitle} Lokal"/>
             <ToolbarSpacer/>
             <Label text="{i18n>invoiceSortByText}" />
             <Button text="{i18n>invoiceByName}" press=".onOrder('byName')"/>

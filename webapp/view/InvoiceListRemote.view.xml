@@ -1,7 +1,7 @@
 <mvc:View
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
-   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList">
+   controllerName="sap.ui.demo.walkthrough.controller.InvoiceListRemote">
    <!-- Zweite Liste mit Remote Daten -->
    <List 
       id="invoiceListRemote"
@@ -16,11 +16,33 @@
       }">
       <headerToolbar>
          <Toolbar>
-            <Title text="{i18n>invoiceListTitle} Remote"/>
+            <Title text="{i18n>invoiceListTitle} von gemocktem Remote-Server"/>
+            <ToolbarSpacer />
+            <SearchField width="50%" search=".onFilterInvoices"/>
          </Toolbar>
       </headerToolbar>
       <items>
-         <ObjectListItem title="{invoiceRemote>Quantity} x {invoiceRemote>ProductName}"/>
+         <ObjectListItem
+            title="{invoiceRemote>Quantity} x {invoiceRemote>ProductName}"
+            number="{
+               parts: [{path: 'invoiceRemote>ExtendedPrice'}, {path: 'view>/currency'}],
+               type: 'sap.ui.model.type.Currency',
+               formatOptions: {
+                  showMeasure: false
+               }
+            }"
+		      numberUnit="{view>/currency}"
+            numberState="{= ${invoiceRemote>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+            <firstStatus>
+					<ObjectStatus 
+                  text="{
+                     path: 'invoiceRemote>Status',
+                     formatter: '.formatter.statusText'
+                  }" 
+                  icon= "{= ${invoiceRemote>Status} === 'A' ? 'sap-icon://present' : ${invoiceRemote>Status} === 'B' ? 'sap-icon://in-progress' : 'sap-icon://accept'  }"
+               />
+				</firstStatus>
+         </ObjectListItem>
       </items>
    </List>
 </mvc:View>
