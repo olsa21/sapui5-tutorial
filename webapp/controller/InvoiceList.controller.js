@@ -42,6 +42,10 @@ sap.ui.define([
             var bGroup = false;
 
             oBinding.sort(new sap.ui.model.Sorter(sSortKey, this.bDescending, bGroup));
+		},
+		onPress: function (oEvent) {
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("detail");
 		}
 	});
 });
