@@ -44,8 +44,16 @@ sap.ui.define([
             oBinding.sort(new sap.ui.model.Sorter(sSortKey, this.bDescending, bGroup));
 		},
 		onPress: function (oEvent) {
+			var oItem = oEvent.getSource();
 			var oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("detail");
+			//zB Invoices/1
+			//getSource: Instanz des Steuerelements bekommen
+			console.log(oItem.getBindingContext("invoice").getPath().substr(1));
+
+			//URL wird aktualisiert und zur Detailansicht navigiert
+			oRouter.navTo("detail", {
+				invoicePath: window.encodeURIComponent(oItem.getBindingContext("invoice").getPath().substr(1))
+			});
 		}
 	});
 });
