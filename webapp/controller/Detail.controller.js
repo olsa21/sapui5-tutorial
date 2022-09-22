@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/routing/History"
+], function (Controller, History) {
 	"use strict";
 	return Controller.extend("sap.ui.demo.walkthrough.controller.Detail", {
 		onInit: function () {
@@ -14,6 +15,20 @@ sap.ui.define([
 				path: "/" + window.decodeURIComponent(oEvent.getParameter("arguments").invoicePath),
 				model: "invoice"
 			});
+		},
+		onNavBack: function () {
+			var oHistory = History.getInstance();
+			//getPreviousHash() : string|undefined
+			var sPreviousHash = oHistory.getPreviousHash();
+
+			if(sPreviousHash !== undefined){
+				//Gehe ein Schritt in der Historie zurück
+				window.history.go(-1);
+			}else{
+				//direkt auf die overview Seite gehen
+				var oRouter = this.getOwnerComponent().getRouter();
+				oRouter.navTo("overview", {}, true);
+			}
 		}
 	});
 });
