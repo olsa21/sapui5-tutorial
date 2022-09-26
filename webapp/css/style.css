@@ -20,3 +20,8 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
 .myAppDemoWTProductRating .sapMRI {
 	vertical-align: initial;
 }
+/* TextWithIcon */
+.textWithIcon{
+      color: rgb(0, 133, 241);
+      vertical-align: initial;
+}
